@@ -1,2 +1,3 @@
-# Wuyue-Field
-这里是我的博客空间，记录自己职业生涯开启之后的学习点滴，学的动，好好弄！
+# WuyueNJ的成长之旅
+
+![](images/blog_background.png)
