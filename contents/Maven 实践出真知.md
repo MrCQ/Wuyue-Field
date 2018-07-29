@@ -237,6 +237,9 @@ Maven 默认情况下，会根据几个常用操作选择默认的插件：
 ## Maven build & test
 
 参照：
+
 [Maven Cheat Sheet zeroturnaround.com](https://zeroturnaround.com/rebellabs/maven-cheat-sheet/)
+
 [Maven pom.xml 配置详解 - CSDN博客](https://blog.csdn.net/ithomer/article/details/9332071)
+
 [Maven – POM Reference](http://maven.apache.org/pom.html)
