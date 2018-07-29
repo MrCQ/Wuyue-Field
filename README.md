@@ -1,3 +1,3 @@
 # WuyueNJ的成长之旅
 
-![](images/blog_background.png)
+![](images/blog_background.jpg)
