@@ -69,6 +69,11 @@ Good luck to the future life.
 |Unit Test||
 |Git|[Git 基本操作](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/Git%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.md)|
 
+
 ### 👻Efficiency
+
+|Title|Link|
+|-----|-----|
+|IntelliJ IDEA||
 
 ### 🍉Personal Share
