@@ -58,7 +58,7 @@ Good luck to the future life.
 |Blade||
 |zheng||
 |junit||
-|Tinyspring||
+|TinySpring||
 
 ### 🤩Tools
 
@@ -68,12 +68,12 @@ Good luck to the future life.
 |Docker||
 |Unit Test||
 |Git|[Git 基本操作](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/Git%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.md)|
-
+|Markdown|[【转载】Markdown Cheatsheet](https://github.com/MrCQ/Wuyue-Field/tree/master/contents/Markdown%20Cheatsheet.md)|
 
 ### 👻Efficiency
 
 |Title|Link|
 |-----|-----|
-|IntelliJ IDEA||
+|IntelliJ IDEA|[IntelliJ IDEA 快捷键汇总](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/IntelliJ%20IDEA%20%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B1%87%E6%80%BB.md)|
 
 ### 🍉Personal Share
