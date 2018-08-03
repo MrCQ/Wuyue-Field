@@ -184,6 +184,18 @@ Hotkey list:
 | Left | ← |
 | Right | → |
 
+Transfer：
+
+|display	|desc	|markdown	|code|
+|-----|-----|-----|-----|
+| 	|space	|`&nbsp;`	|`&#160;`|
+|<	|less than	|`&lt;`	|`&#60;`|
+|>	|more than	|`&gt;`	|`&#62;`|
+|&	|and	|`&amp;`	|`&#38;`|
+|“	|quotation	|`&quot;`	|`&#34;`|
+|‘	|accent	|`&apos;`	|`&#39;`|
+
+
 Emoji:
 
 :exclamation: Use emoji icons to enhance text. :+1:  Look up emoji codes at [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/)

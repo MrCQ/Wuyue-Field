@@ -34,6 +34,8 @@ Good luck to the future life.
 
 |Title|Link|
 |-----|----|
+|Java 基础||
+|Java 虚拟机||
 |Java 多线程|[Java 多线程大排档](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%A7%E6%8E%92%E6%A1%A3.md)|
 |Java 动态特性|[Java 反射、动态代理与注解](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/Java%20%E5%8F%8D%E5%B0%84%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E4%B8%8E%E6%B3%A8%E8%A7%A3.md)|
 |Java8 新特性|[Java8 中的方法引用](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/Java8%20%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8.md)|
@@ -48,6 +50,20 @@ Good luck to the future life.
 |MyBatis||
 |SpringBoot|[SpringBoot 大杂烩](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/SpringBoot%20%E5%A4%A7%E6%9D%82%E7%83%A9.md)|
 
+### 😪Algorithm
+
+#### Basic Algorithm
+
+|Title|Link|
+|----|----|
+
+#### Machine Learning
+
+|Title|Link|
+|-----|-----|
+|数据处理|[特征工程基本概要]()|
+|吴恩达的深度学习课程||
+
 ### 😥Storage
 
 ### 🧐Middleware
@@ -57,9 +73,9 @@ Good luck to the future life.
 |Title|Link|
 |-----|----|
 |Blade||
-|zheng||
-|junit||
-|TinySpring||
+|Zheng||
+|JUnit||
+|TinySpring|[TinySpring 源码解析](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/TinySpring%20%E6%BA%90%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90.md)|
 
 ### 🤩Tools
 

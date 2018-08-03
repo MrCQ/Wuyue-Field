@@ -234,6 +234,16 @@ Maven 默认情况下，会根据几个常用操作选择默认的插件：
   </profiles>
 ```
 
+## Maven scope
+
+&lt;dependency&gt; 依赖属性配置过程中，属性项中包含 &lt;scope&gt; ，它主要管理依赖的部署。目前 &lt;scope&gt; 可以使用 5 个值： 
+
+* `compile`，缺省值，适用于所有阶段，会随着项目一起发布。 
+* `provided`，类似 compile，期望 JDK、容器或使用者会提供这个依赖。如servlet.jar, 不发布。
+* `runtime`，只在运行时使用，如 JDBC 驱动，适用运行和测试阶段。 
+* `test`，只在测试时使用，用于编译和运行测试代码。不会随项目发布。 
+* `system`，类似 provided，需要显式提供包含依赖的 jar，Maven 不会在 Repository 中查找它。
+
 ## Maven build & test
 
 参照：
