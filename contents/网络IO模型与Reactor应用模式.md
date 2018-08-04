@@ -83,12 +83,49 @@ select是内核级别的，可以同时等待监听多个socket，socket发起�
 
 ## Reactor模式
 
+编程模式对应IO模型思想，Java中的NIO对应到同步非阻塞IO模式，Reactor编程模式可以作为IO多路复用的实现载体
+
+Reactor：
+
+> The reactor design pattern is an event handling pattern for handling service requests delivered concurrently to a service handler by one or more inputs. The service handler then demultiplexes the incoming requests and dispatches them synchronously to the associated request handlers.
+
+其特点在于：
+
+* 事件驱动
+* 多输入源同时处理
+* 每个事件对应到handler处理器
+
+![](https://oscimg.oschina.net/oscnet/1f5c2e595e41559ac0c829a96a918c15f4e.jpg)
+
+Reactor处理模式包含三种角色类型：
+
+* Reactor：将I/O事件分派到对应的Handler
+* Acceptor：处理新连接
+* Handler：还行非阻塞读写任务
+
+如何来理解这三类角色的相互作用关系，以及Reactor的工作原理呢？ 
+
+类比应用场景：长途客车在路途上，有人上车有人下车，但是乘客总是希望能够在客车上得到休息。
+
+传统做法：每隔一段时间（或每一个站），司机或售票员对每一个乘客询问是否下车。
+
+Reactor 做法：汽车是乘客访问的主体（Reactor），乘客上车后，到售票员（acceptor）处登记，之后乘客便可以休息睡觉去了，当到达乘客所要到达的目的地后，售票员将其唤醒即可。
 
 
+### 单Reactor单线程
 
+![](https://oscimg.oschina.net/oscnet/e9f813b5b08ac68021039ae5141c03f3cfc.jpg)
 
+### 单Reactor多线程
 
+![](https://oscimg.oschina.net/oscnet/1828d992e8821f9f093b6bf12c58732bb13.jpg)
+
+### 多Reactor
+
+![](https://oscimg.oschina.net/oscnet/7ea7f4beb7b3c1d1c87d7b9e3bab8b6afb4.jpg)
 
 参考：
 
 [从 I/O 模型到 Netty](https://juejin.im/post/58bbaee6ac502e006b02f607)
+
+[NIO系列—Reactor模型](https://juejin.im/post/5b4570cce51d451984695a9b)
