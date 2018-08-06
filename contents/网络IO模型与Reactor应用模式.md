@@ -114,15 +114,31 @@ Reactor 做法：汽车是乘客访问的主体（Reactor），乘客上车后�
 
 ### 单Reactor单线程
 
+这种模式下，Reactor线程负责多路Socket的分离，新连接触发connect事件之后会由Reactor交给Acceptor进行处理，有IO读写事件之后会交给handler处理。
+
+* Acceptor的任务是构建handler，将相关socket信息绑定到对应的handler
+* 有读写事件时，动过Reactor的分发，handler就能处理了
+
 ![](https://oscimg.oschina.net/oscnet/e9f813b5b08ac68021039ae5141c03f3cfc.jpg)
 
+但是这种模式下，读写事件都是通过Reactor主线程来完成的，效率相对比较低
+
 ### 单Reactor多线程
+
+该模式相对于上一种模式，主体上是一致的，区别在于将IO读写操作都放到了线程池进行，不再局限于主线程空间，能够降低主线程Reactor的性能开销，使其可以专心于事件分发工作，以此通过多线程来提升整个应用的吞吐。
 
 ![](https://oscimg.oschina.net/oscnet/1828d992e8821f9f093b6bf12c58732bb13.jpg)
 
 ### 多Reactor
 
+该模式相对于第二种模式，其将Reactor分为两部分：
+
+* mainReactor 负责监听 server socket，用于处理新连接的建立，将建立的 socketChannel 指定注册给 subReactor
+* subReactor 维护自己的selector，完成 mainReactor 指派的 socketChannel 的IO事件监听工作，并将对数据的处理过程交给线程池进行
+
 ![](https://oscimg.oschina.net/oscnet/7ea7f4beb7b3c1d1c87d7b9e3bab8b6afb4.jpg)
+
+这种模式下，每个模块的工作更加专一，耦合度更低，性能和稳定性也能得到大幅提升，可支撑的客户端数量也能有很大提升。
 
 参考：
 
