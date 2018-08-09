@@ -2,6 +2,14 @@
 
 ![](images/blog_background.jpg)
 
+<p align='center'>
+<img src="https://img.shields.io/badge/build-passing-brightgreen.svg">
+<img src="https://img.shields.io/badge/language-Java-orange.svg">
+<a href=""><img src="https://img.shields.io/badge/license-CC-yellow.svg"></a>
+<img src="https://img.shields.io/badge/made%20with-=1-blue.svg">
+<img src="https://img.shields.io/badge/PR-welcome%20!-brightgreen.svg?colorA=a0cd34">
+</p>
+
 ## ✍🏼What is it
 
 This is all about knowledge and learning progress, 
@@ -96,3 +104,8 @@ Good luck to the future life.
 |IntelliJ IDEA|[IntelliJ IDEA 快捷键汇总](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/IntelliJ%20IDEA%20%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B1%87%E6%80%BB.md)|
 
 ### 🍉Personal Share
+
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">作品</span>由 <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/MrCQ/Wuyue-Field" property="cc:attributionName" rel="cc:attributionURL">Wuyue</a> 创作，采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
