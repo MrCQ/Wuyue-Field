@@ -36,7 +36,8 @@ Good luck to the future life.
 |Raft 协议|[【转载】Raft 为什么是更易理解的分布式一致性算法](https://www.cnblogs.com/mindwind/p/5231986.html)|
 |I/O模型|[I/O 模型与 Reactor 编程模式](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/%E7%BD%91%E7%BB%9CIO%E6%A8%A1%E5%9E%8B%E4%B8%8EReactor%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F.md)|
 |Hash 一致性||
-|分布式系统设计|[分布式系统弹力设计笔记](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%BC%B9%E5%8A%9B%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0.md)|
+|分布式系统设计|[分布式系统弹力设计笔记](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%BC%B9%E5%8A%9B%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0.md)<br>[分布式系统管理设计笔记](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0.md)|
+
 
 ### 😀Programing Foundation
 
