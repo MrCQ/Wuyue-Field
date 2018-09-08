@@ -63,3 +63,8 @@ SpringMVC的关键就在于**DispatcherServlet**，它就是SpringMVC的Servlet�
 SpringMVC的处理过程紧紧围绕DispatcherServlet展开，其工作原理如图所示：
 
 ![](http://ww4.sinaimg.cn/mw690/6941baebtw1epg9al8bv6j20f90aqjrx.jpg)
+
+参见：
+
+* [An Introduction to Tomcat Servlet Interactions](https://www.mulesoft.com/cn/tcat/tomcat-servlet)
+* [How Spring Web MVC Really Works](https://stackify.com/spring-mvc/)
