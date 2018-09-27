@@ -158,27 +158,27 @@ Maven 默认情况下，会根据几个常用操作选择默认的插件：
     </profile>
 </profiles> 
 
-	<build>  
-	<!--该元素设置了项目源码目录，当构建项目的时候，构建系统会编译目录里的源码。该路径是相对于pom.xml的相对路径。-->
-        <finalName>myweb</finalName>  
-        <resources>  
-            <resource>  
-                <directory>src/main/resources</directory>  
-                <includes>  
-                    <include>**/*</include>  
-                </includes>  
-				   <!--是否使用参数值代替参数名。参数值取自properties元素或者文件里配置的属性，文件在filters元素里列出。--> 
-                <filtering>true</filtering>  
-                <excludes>  
-                    <exclude>application-text.xml</exclude>  
-                    <!--<exclude>src/main/resources/application-text.xml</exclude>-->  
-                </excludes>  
-            </resource>  
-        </resources>  
-        <!-- <filters> 可以直接在profile的build中配置filter，也可以采用如下方式-->  
-            <!--<filter>src/main/resources/${profiles.active}.properties</filter>-->  
-        <!--</filters>-->  
-    </build>  
+<build>  
+<!--该元素设置了项目源码目录，当构建项目的时候，构建系统会编译目录里的源码。该路径是相对于pom.xml的相对路径。-->
+    <finalName>myweb</finalName>  
+    <resources>  
+        <resource>  
+            <directory>src/main/resources</directory>  
+            <includes>  
+                <include>**/*</include>  
+            </includes>  
+			   <!--是否使用参数值代替参数名。参数值取自properties元素或者文件里配置的属性，文件在filters元素里列出。--> 
+            <filtering>true</filtering>  
+            <excludes>  
+                <exclude>application-text.xml</exclude>  
+                <!--<exclude>src/main/resources/application-text.xml</exclude>-->  
+            </excludes>  
+        </resource>  
+    </resources>  
+    <!-- <filters> 可以直接在profile的build中配置filter，也可以采用如下方式-->  
+        <!--<filter>src/main/resources/${profiles.active}.properties</filter>-->  
+    <!--</filters>-->  
+</build>  
 ```
 
 通过` <activeByDefault>true</activeByDefault>`指定默认环境为dev
@@ -231,7 +231,7 @@ Maven 默认情况下，会根据几个常用操作选择默认的插件：
       </activation>
       ...
     </profile>
-  </profiles>
+</profiles>
 ```
 
 ## Maven scope
@@ -258,7 +258,7 @@ TODO
 
 * maven-shade-plugin: It packages all dependencies into one uber-jar. It can also be used to **build an executable jar by specifying the main class**. This plugin is particularly useful as it merges content of specific files instead of overwriting them by Relocating Classes. This is needed when there are resource files that are have the same name across the jars and the plugin tries to package all the resource files.
 
-其中默认插件是：aven-jar-plugin， 只要在pom文件中指定了打包方式为`<packaging>jar</packaging>`，则默认使用该插件，但是该插件不会将所有依赖包都打包进jar。
+其中默认插件是：maven-jar-plugin， 只要在pom文件中指定了打包方式为`<packaging>jar</packaging>`，则默认使用该插件，但是该插件不会将所有依赖包都打包进jar。
 如果配置的是 `<packaging>war</packaging>` 则自动引入 `maven-war-plugin`。
 
 ### 用maven-shade-plugin打包
