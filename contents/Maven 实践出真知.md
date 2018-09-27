@@ -246,10 +246,177 @@ Maven 默认情况下，会根据几个常用操作选择默认的插件：
 
 ## Maven build & test
 
+TODO
+
+## Maven package
+
+首先看常用的集中打包插件：
+
+* maven-jar-plugin: This plugin provides the capability to build and sign jars. But it just compiles the java files under src/main/java and /src/main/resources/. **It doesn't include the dependencies JAR files**. ( you should specify the main class when you run you jar in this way. )
+
+* maven-assembly-plugin: This plugin extracts all dependency jars into raw classes, and group it together. It can also be used to build an executable jar by specifying the main class. It works in project with less dependencies only, for large project with many dependencies, it will cause Java class name conflict issue.
+
+* maven-shade-plugin: It packages all dependencies into one uber-jar. It can also be used to **build an executable jar by specifying the main class**. This plugin is particularly useful as it merges content of specific files instead of overwriting them by Relocating Classes. This is needed when there are resource files that are have the same name across the jars and the plugin tries to package all the resource files.
+
+其中默认插件是：aven-jar-plugin， 只要在pom文件中指定了打包方式为`<packaging>jar</packaging>`，则默认使用该插件，但是该插件不会将所有依赖包都打包进jar。
+如果配置的是 `<packaging>war</packaging>` 则自动引入 `maven-war-plugin`。
+
+### 用maven-shade-plugin打包
+
+IDEA 自身的打包过程过于繁琐，而且也没有利用到maven管理项目的特色。为此，我们这里利用maven中的`maven-shade-plugin`插件。在pom.xml中，我们加入如下的信息来加入插件。
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>1.4</version>
+    <configuration>
+        <createDependencyReducedPom>true</createDependencyReducedPom>
+    </configuration>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>shade</goal>
+            </goals>
+            <configuration>
+                <transformers>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                        <mainClass>Main.Main</mainClass>
+                    </transformer>
+                </transformers>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
+
+这里面配置了一个 `configuration` 标签内容，在此标签下面 有一个transformer标签，用来配置Main函数的入口`<mainClass>Main.Main</mainClass>`，当然此标签内容很复杂，不是上面写的那么简单，上面之所以如此简单，是因为在所有类中(包括第三方Jar)只有一个Main方法。如果第三方jar中有Main方法，就要进行额外的配置，上面这么配置，不一定能执行成功。
+
+在加入这段代码到pom.xml之后，我们就可以用maven的命令去打包了。其指令如下：
+
+```
+mvn clean compile //清除之前target编译文件并重新编译
+mvn clean package //对项目进行打包(因为配置过插件，所以jar包是可执行的)
+mvn clean install //安装项目，然后就可以使用了
+```
+
+然后通过`java -jar cps-1.0-SNAPSHOT.jar` 运行。
+
+如果使用IDEA的话，可以通过自带的maven管理工具代替执行上面的命令，一次点击上述命令对应用的操作按键。
+
+### 用maven-assembly-plugin打包，一次操作
+
+上面的方法，我们还需要点击很多命令去打包。这次利用一个新的插件，可以打包更简单。同样，在`pom.xml`中加入如下代码。上文的`maven-shade-plugin`插件代码可以删除。**最好不要写2个插件代码**。
+
+```xml
+<plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.4</version>
+    <configuration>
+        <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+        <archive>
+            <manifest>
+                <mainClass>Main.Main</mainClass>
+            </manifest>
+        </archive>
+    </configuration>
+    <executions>
+        <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
+
+这里同样配置了一个manifest标签来配置Main函数的入口。然后通过如下指令来实现打包。
+
+```sh
+mvn assembly:assembly
+```
+
+如果使用IDEA的话，可以通过自带的maven管理工具代替执行上面的命令
+
+然后通过执行`java -jar cps-1.0-SNAPSHOT-jar-with-dependencies.jar`运行。
+
+### SpringBoot 的 spring-boot-maven-plugin 插件打包方式
+
+**对于SpringBoot应用，理论上具备自动检测主类的功能，不需要再自行定义MainClass**
+
+在pom文件中引入：
+
+```xml
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+```
+
+具体操作：
+
+* 通过`mvn clean package`命令打包应用程序
+* 通过命令`java -jar target/bookpub-0.0.1-SNAPSHOT.jar`运行程序
+
+背后的工作由`spring-boot-maven-plugin`插件实现：先通过`maven-shade-plugin`生成一个包含依赖的jar，再通过`spring-boot-maven-plugin`插件把spring boot loader相关的类，还有MANIFEST.MF打包到jar里
+
+## 常见问题
+
+### 如何将所有的依赖一起打包呢？
+
+使用`maven-assembly-plugin`打包插件，增加相应配置
+
+```xml
+<plugin>
+	<artifactId>maven-assembly-plugin</artifactId>
+	<configuration>
+	  <descriptorRefs>
+	    <descriptorRef>jar-with-dependencies</descriptorRef>
+	  </descriptorRefs>
+	</configuration>
+</plugin>
+```
+
+### 如何将一个jar包手动放到本地的maven仓库
+
+```xml
+mvn install:install-file
+  -Dfile=<path-to-file>
+  -DgroupId=<group-id>
+  -DartifactId=<artifact-id>
+  -Dversion=<version>
+  -Dpackaging=<packaging>
+  -DgeneratePom=true
+ 
+Where: <path-to-file>  the path to the file to load
+       <group-id>      the group that the file should be registered under
+       <artifact-id>   the artifact name for the file
+       <version>       the version of the file
+       <packaging>     the packaging of the file e.g. jar
+```
+
+### maven 是如何进行依赖仲裁的?
+
+依照如下顺序：
+
+1. 按项目 pom.xml 的 dependencyManagement 进行仲裁
+2. 如无仲裁声明，则路径最短的胜出
+3. 若路径相同，则有严格的版本区间胜出
+4. 若路径相同，且无严格版本区间，则先入为主
+
 参照：
 
-[Maven Cheat Sheet zeroturnaround.com](https://zeroturnaround.com/rebellabs/maven-cheat-sheet/)
+* [Maven Cheat Sheet zeroturnaround.com](https://zeroturnaround.com/rebellabs/maven-cheat-sheet/)
 
-[Maven pom.xml 配置详解 - CSDN博客](https://blog.csdn.net/ithomer/article/details/9332071)
+* [Maven pom.xml 配置详解 - CSDN博客](https://blog.csdn.net/ithomer/article/details/9332071)
 
-[Maven – POM Reference](http://maven.apache.org/pom.html)
+* [Maven – POM Reference](http://maven.apache.org/pom.html)
