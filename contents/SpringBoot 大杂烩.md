@@ -1309,6 +1309,6 @@ log4j.appender.file.layout=org.apache.log4j.PatternLayout
 log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n
 
 # com.didispace包下的日志配置
-log4j.category.com.didispace=DEBUG, didifile
+log4j.category.com.didispace=DEBUG, file
 
 ```
