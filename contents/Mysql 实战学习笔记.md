@@ -265,7 +265,7 @@ change buffer 的数据也是会持久化的数据，存在于内存以及磁盘
 
 ### redo log vs. change buffer
 
-当执行语句：`mysql> insert into t(id,k) values(id1,k1),(id2,k2)`
+当执行语句：`insert into t(id,k) values(id1,k1),(id2,k2)`
 
 插入两条记录到t表中，k1记录所在的数据页在内存中(InnoDB buffer pool)中，k2所在的数据页不在内存中
 
