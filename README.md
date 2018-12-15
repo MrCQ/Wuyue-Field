@@ -26,8 +26,8 @@ Good luck to the future life.
 
 |Title|Link|
 |-----|----|
-|Network||
-|Database|[MySQL 基础操作](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/MySQL%20%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.md)|
+|Network|[I/O模型与Reactor编程模式](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/%E7%BD%91%E7%BB%9CIO%E6%A8%A1%E5%9E%8B%E4%B8%8EReactor%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F.md)|
+|Database|[MySQL 基础操作](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/MySQL%20%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.md)<br>[Mysql 实战学习笔记](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/Mysql%20%E5%AE%9E%E6%88%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)|
 
 #### Distributed System:
 
@@ -52,6 +52,21 @@ Good luck to the future life.
 |Java8 新特性|[Java8 中的方法引用](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/Java8%20%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8.md)|
 |Java 反应式编程||
 
+#### Python
+|Title|Link|
+|-----|----|
+
+#### Go
+|Title|Link|
+|-----|----|
+
+#### Reactive Programing
+
+|Title|Link|
+|-----|-----|
+|基础理论||
+|编程实操|[Project Reactor 上手之路](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/Project%20Reactor%20%E4%B8%8A%E6%89%8B%E4%B9%8B%E8%B7%AF.md)|
+
 ### 😂Framework
 
 |Title|Link|
@@ -72,8 +87,9 @@ Good luck to the future life.
 
 |Title|Link|
 |-----|-----|
-|数据处理|[特征工程基本概要]()|
-|吴恩达的深度学习课程||
+|Data Processing|[特征工程基本概要]()|
+|Machine Learning|[机器学习基础课学习笔记](https://github.com/MrCQ/Wuyue-Field/blob/master/contents/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)|
+|Deep Learning||
 
 ### 😥Storage
 
