@@ -53,6 +53,7 @@ class ClassName implements Test<T, R> {
 * Consumer<T>           方法仅有一个参数，且无返回值
 * Predicate<T>          方法仅有一个参数，且返回值是bool类型
 * Function<T, R>        方法仅有一个参数，且有返回值, 返回值类型是R
+* BiConsumer<T, R>      方法有两个参数，无返回值
 
 究竟用哪个引用类型来表征比如Car::func ， 那就得看func的具体实现结构，尤其是返回值
 
@@ -91,3 +92,4 @@ public static boolean isNormalClass(Class<?> cls) {
 
 * [Java 8 Method References explained in 5 minutes](https://blog.idrsolutions.com/2015/02/java-8-method-references-explained-5-minutes/)
 * [Java 8 Method Reference: How to Use it](https://www.codementor.io/eh3rrera/using-java-8-method-reference-du10866vx)
+* [How to invoke parameterized method with method reference](https://stackoverflow.com/questions/23023618/how-to-invoke-parameterized-method-with-method-reference/23025159#23025159)
